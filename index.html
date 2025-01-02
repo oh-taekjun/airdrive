@@ -3,89 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Address Search Page</title>
+    <title>에어드라이브</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
+            background-color: #f9f9f9;
             color: #333;
-            text-align: center;
         }
         header {
             background-color: #0073e6;
             color: white;
             padding: 20px 0;
+            text-align: center;
         }
         header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
+        }
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 20px;
+        }
+        .menu-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            max-width: 300px;
+        }
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+        .menu-item h2 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+            color: #0073e6;
+        }
+        .menu-item p {
+            font-size: 1em;
+            color: #666;
         }
         footer {
             margin-top: 40px;
             padding: 10px;
             background-color: #0073e6;
             color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .search-container {
-            margin: 20px;
-        }
-        .search-container input {
-            padding: 10px;
-            width: 300px;
-            font-size: 1em;
-            margin-right: 10px;
-        }
-        .search-container button {
-            padding: 10px 20px;
-            font-size: 1em;
-            background-color: #0073e6;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .search-container button:hover {
-            background-color: #005bb5;
+            text-align: center;
         }
     </style>
-    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script>
-        function searchAddress(inputId) {
-            new daum.Postcode({
-                oncomplete: function(data) {
-                    const fullAddress = data.roadAddress || data.jibunAddress;
-                    document.getElementById(inputId).value = fullAddress;
-                    alert('주소가 성공적으로 입력되었습니다: ' + fullAddress);
-                }
-            }).open();
-        }
-    </script>
 </head>
 <body>
     <header>
-        <h1>Address Search Page</h1>
+        <h1>에어드라이브</h1>
     </header>
 
     <main>
-        
-        <div class="search-container">
-            <label for="departure">출발지:</label>
-            <input type="text" id="departure" placeholder="출발지를 입력하세요">
-            <button onclick="searchAddress('departure')">출발지 검색</button>
-        </div>
-        <div class="search-container">
-            <label for="destination">도착지:</label>
-            <input type="text" id="destination" placeholder="도착지를 입력하세요">
-            <button onclick="searchAddress('destination')">도착지 검색</button>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/100" alt="공항이동">
+                <h2>공항이동</h2>
+                <p>공항가까지 지원 해드리는 서비스</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/100" alt="주차대행">
+                <h2>주차대행</h2>
+                <p>주차을 평소보다 편리하게 이용</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/100" alt="투어">
+                <h2>투어</h2>
+                <p>통해지 못하는 안내 데이스</p>
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Address Search Page</p>
+        <p>&copy; 2025 에어드라이브. 모든 권리 복수.</p>
     </footer>
 </body>
 </html>
